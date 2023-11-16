@@ -22,6 +22,7 @@ class Timer():
             self.timer_id = window.after(1000, self.count_down, canvas, timer_txt, wpm_txt, window, word_entry)
         else:
             word_entry.config(state='disabled')
+            time.sleep(1)                       #need sleep to show wpm if user accidentally types wrong word.
             self.calc_wpm(canvas, wpm_txt)
     
     def start_test(self, canvas, timer_txt, wpm_txt, window, word_entry):
